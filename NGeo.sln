@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo", "NGeo\NGeo.csproj", "{C03AD2E1-4728-477D-BC7A-4F0E92A2F9C4}"
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo.NET40", "NGeo.NET40\NGeo.NET40.csproj", "{C03AD2E1-4728-477D-BC7A-4F0E92A2F9C4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7180D76F-6485-4EB7-9F7B-9DBF7337BEE1}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		UnitRun.testsettings = UnitRun.testsettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo.Tests", "NGeo.Tests\NGeo.Tests.csproj", "{9FB42065-E9AA-43AA-902B-449099A082BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo.Tests.NET40", "NGeo.Tests.NET40\NGeo.Tests.NET40.csproj", "{9FB42065-E9AA-43AA-902B-449099A082BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{54B67292-CF50-4FD0-9BE5-4F681857E59B}"
 	ProjectSection(SolutionItems) = preProject
@@ -36,9 +38,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Releases", "Releases", "{00
 		nupkgs\NGeo.1.9.0.0.nupkg = nupkgs\NGeo.1.9.0.0.nupkg
 	EndProjectSection
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "NGeo.Shared", "NGeo.Shared\NGeo.Shared.shproj", "{38243C73-F3A6-43F7-BE76-398C2E89A6D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo.PCL45", "NGeo.PCL45\NGeo.PCL45.csproj", "{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C9A8DDE5-6E65-458D-B88A-6BC52557EF45}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "NGeo.Tests.Shared", "NGeo.Tests.Shared\NGeo.Tests.Shared.shproj", "{7B4FC1B8-2CE4-49BA-B04D-E1E05991F19D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo.Tests.PCL45", "NGeo.Tests.PCL45\NGeo.Tests.PCL45.csproj", "{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = NGeo.vsmdi
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		NGeo.Shared\NGeo.Shared.projitems*{38243c73-f3a6-43f7-be76-398c2e89a6d4}*SharedItemsImports = 13
+		NGeo.Tests.Shared\NGeo.Tests.Shared.projitems*{7b4fc1b8-2ce4-49ba-b04d-e1e05991f19d}*SharedItemsImports = 13
+		NGeo.Tests.Shared\NGeo.Tests.Shared.projitems*{9fb42065-e9aa-43aa-902b-449099a082bf}*SharedItemsImports = 4
+		NGeo.Shared\NGeo.Shared.projitems*{c03ad2e1-4728-477d-bc7a-4f0e92a2f9c4}*SharedItemsImports = 4
+		NGeo.Tests.Shared\NGeo.Tests.Shared.projitems*{c35d0749-f687-43dc-94e8-3d2edf9b7ff1}*SharedItemsImports = 4
+		NGeo.Shared\NGeo.Shared.projitems*{e9d5a5f8-e040-45f3-87b7-4dcbc5bad293}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,11 +70,25 @@ Global
 		{9FB42065-E9AA-43AA-902B-449099A082BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FB42065-E9AA-43AA-902B-449099A082BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FB42065-E9AA-43AA-902B-449099A082BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{9FB42065-E9AA-43AA-902B-449099A082BF} = {C9A8DDE5-6E65-458D-B88A-6BC52557EF45}
 		{007BF774-1259-4AB2-94F4-72098D4F1290} = {7180D76F-6485-4EB7-9F7B-9DBF7337BEE1}
+		{7B4FC1B8-2CE4-49BA-B04D-E1E05991F19D} = {C9A8DDE5-6E65-458D-B88A-6BC52557EF45}
+		{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1} = {C9A8DDE5-6E65-458D-B88A-6BC52557EF45}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = NGeo.vsmdi
 	EndGlobalSection
 EndGlobal

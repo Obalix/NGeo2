@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>7b4fc1b8-2ce4-49ba-b04d-e1e05991f19d</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>NGeo.Tests.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ExtensionMethods.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ExtensionMethodTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\AlternateNameTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\CountryTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\GeoNamesClientTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\GeoNamesContainerTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\HierarchyTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\IConsumeGeoNamesTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\IContainGeoNamesTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\NearbyPlaceNameFinderTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\NearbyPostalCodeFinderTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\NearbyPostalCodeResultsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\NearbyPostalCodeTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\PostalCodedCountryTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\PostalCodeLookupTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\PostalCodeResultsTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\PostalCodeTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\ResultsTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\ResultStyleTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\TimeZoneExtendedTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\TimeZoneLookupTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\TimeZoneTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\ToponymTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\AdminTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\BoundingBoxTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\ConcordanceNamespaceTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\ConcordanceResponseTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\GeoPlanetClientTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\GeoPlanetContainerTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\IConsumeGeoPlanetTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\IContainGeoPlanetTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\IInvokeGeoPlanetServicesTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\Json\JsonAdminAttributesTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\Json\JsonConverterTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\Json\JsonLocalityAttributes.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\Json\JsonPlaceTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\Json\JsonPlaceTypeAttributesTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\Json\JsonPlaceTypeTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\LocalityTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\PlaceResponseTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\PlacesResponseTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\PlacesTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\PlaceTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\PlaceTypessResponseTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\PlaceTypesTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\PlaceTypeTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\PointTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\GeoPlanet\RequestViewTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\BoundingBoxTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\FlagTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\GFlagTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\IConsumePlaceFinderTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\PlaceByCoordinatesTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\PlaceByExtensionsTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\PlaceByFreeformTextTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\PlaceByFullyParsedAddressTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\PlaceByMultilineAddressTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\PlaceByNameTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\PlaceByTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\PlaceByWoeIdTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\PlaceFinderClientTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\QualityCategoryTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\QualityDescriptionTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\QualityExtensionsTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\ResponseTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\ResultTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\_Deprecated\_IInvokePlaceFinderServicesTests.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Yahoo\PlaceFinder\_Deprecated\_ResultSetTests.cs" />
+  </ItemGroup>
+</Project>
