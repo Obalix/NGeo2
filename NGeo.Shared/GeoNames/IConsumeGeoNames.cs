@@ -28,6 +28,7 @@ namespace NGeo.GeoNames
         TimeZoneExtended TimeZone(TimeZoneLookup lookup);
     }
 
+#if (!NET40)
 	public interface IConsumeGeoNamesAsync : IDisposable 
 	{
 		Task<ReadOnlyCollection<Toponym>> FindNearbyPlaceNameAsync(NearbyPlaceNameFinder finder);
@@ -51,4 +52,5 @@ namespace NGeo.GeoNames
 
 		Task<TimeZoneExtended> TimeZoneAsync(TimeZoneLookup lookup);
 	}
+#endif
 }

@@ -2,7 +2,6 @@
 using System.Collections.ObjectModel;
 using System.Net;
 using System.ServiceModel;
-using System.Threading.Tasks;
 
 namespace NGeo.GeoNames
 {
@@ -15,7 +14,7 @@ namespace NGeo.GeoNames
     ///     var toponym = geoNamesClient.Get(6295630, "demo");
     /// }
     /// </example>
-    public class GeoNamesClient : ClientBase<IInvokeGeoNamesServices>, IConsumeGeoNames, IConsumeGeoNamesAsync, IDisposable
+    public class GeoNamesClient : ClientBase<IInvokeGeoNamesServices>, IConsumeGeoNames, IDisposable
 	{
         private const int RetryLimit = 5;
         private const string ClosedConnectionMessage = "The underlying connection was closed: A connection that was expected to be kept alive was closed by the server.";
@@ -31,19 +30,6 @@ namespace NGeo.GeoNames
 		}
 
 		#region [FindNearbyPlaceNameAsync]
-
-		/// <summary>
-		/// Find nearby populated place / reverse geocoding. See
-		/// <seealso cref="http://www.geonames.org/export/web-services.html#findNearbyPlaceName">Official
-		/// GeoNames  findNearbyPlaceName Documentation</seealso> for more information.
-		/// </summary>
-		/// <param name="finder">Arguments sent to the GeoNames service.</param>
-		/// <returns>The closest populated place for the lat/lng query as xml document. The unit of the
-		/// distance element is 'km'.</returns>
-		public Task<ReadOnlyCollection<Toponym>> FindNearbyPlaceNameAsync(NearbyPlaceNameFinder finder)
-		{
-			return SyncToTaskFactory.CreateTask(() => FindNearbyPlaceName(finder));
-		}
 
 		/// <summary>
 		/// Find nearby populated place / reverse geocoding. See
@@ -94,19 +80,6 @@ namespace NGeo.GeoNames
 		/// <param name="lookup">Arguments sent to the GeoNames service.</param>
 		/// <returns>The closest populated place for the postal code/country query. The unit of the
 		/// distance element is 'km'.</returns>
-		public Task<ReadOnlyCollection<PostalCode>> LookupPostalCodeAsync(PostalCodeLookup lookup)
-		{
-			return SyncToTaskFactory.CreateTask(() => this.LookupPostalCode(lookup));
-		}
-
-		/// <summary>
-		/// Lookup a place by postal code. See
-		/// <seealso cref="http://www.geonames.org/export/web-services.html#postalCodeLookupJSON">Official
-		/// GeoNames postalCodeLookup Documentation</seealso> for more information.
-		/// </summary>
-		/// <param name="lookup">Arguments sent to the GeoNames service.</param>
-		/// <returns>The closest populated place for the postal code/country query. The unit of the
-		/// distance element is 'km'.</returns>
 		public ReadOnlyCollection<PostalCode> LookupPostalCode(PostalCodeLookup lookup)
         {
             if (lookup == null) throw new ArgumentNullException("lookup");
@@ -134,20 +107,6 @@ namespace NGeo.GeoNames
 		#endregion
 
 		#region [FindNearbyPostalCodes]
-
-		/// <summary>
-		/// Lookup a postal code by either Latitude/Longitude or Postalcode/Country/LocalCountry See
-		/// <seealso cref="http://www.geonames.org/export/web-services.html#findNearbyPostalCodes">Official
-		/// GeoNames postalCodeLookup Documentation</seealso> for more information.
-		/// </summary>
-		/// <param name="finder">Arguments sent to the GeoNames service.</param>
-		/// <returns>The closest postal codes to the given lat/lon. If the lat/lon is within a postal
-		/// code it will be the first result with a zero distance. The unit of the distance element 
-		/// is 'km'.</returns>
-		public Task<ReadOnlyCollection<NearbyPostalCode>> FindNearbyPostalCodesAsync(NearbyPostalCodesFinder finder)
-		{
-			return SyncToTaskFactory.CreateTask(() => this.FindNearbyPostalCodes(finder));
-		}
 
 		/// <summary>
 		/// Lookup a postal code by either Latitude/Longitude or Postalcode/Country/LocalCountry See
@@ -199,18 +158,6 @@ namespace NGeo.GeoNames
 		/// </summary>
 		/// <param name="userName">Your user name.</param>
 		/// <returns>Country information: Name, Abbreviation, Min & Max Postal Codes.</returns>
-		public Task<ReadOnlyCollection<PostalCodedCountry>> PostalCodeCountryInfoAsync(string userName)
-		{
-			return SyncToTaskFactory.CreateTask(() => this.PostalCodeCountryInfo(userName));
-		}
-
-		/// <summary>
-		/// Postal Code Country Info (countries available with min & max postal codes). See
-		/// <seealso cref="http://www.geonames.org/export/web-services.html#postalCodeCountryInfo">Official
-		/// GeoNames postalCodeCountryInfo Documentation</seealso> for more information.
-		/// </summary>
-		/// <param name="userName">Your user name.</param>
-		/// <returns>Country information: Name, Abbreviation, Min & Max Postal Codes.</returns>
 		public ReadOnlyCollection<PostalCodedCountry> PostalCodeCountryInfo(string userName)
         {
             var response = ChannelPostalCodeCountryInfo(userName);
@@ -242,17 +189,6 @@ namespace NGeo.GeoNames
 		/// <param name="geoNameId">The GeoName ID of the toponym to get.</param>
 		/// <param name="userName">Your user name.</param>
 		/// <returns>The toponym for the specified geoNameId, if one exists.</returns>
-		public Task<Toponym> GetAsync(int geoNameId, string userName)
-		{
-			return SyncToTaskFactory.CreateTask(() => this.Get(geoNameId, userName));
-		}
-
-		/// <summary>
-		/// Information about a specific GeoNames toponym, by ID.
-		/// </summary>
-		/// <param name="geoNameId">The GeoName ID of the toponym to get.</param>
-		/// <param name="userName">Your user name.</param>
-		/// <returns>The toponym for the specified geoNameId, if one exists.</returns>
 		public Toponym Get(int geoNameId, string userName)
         {
             var toponym = ChannelGet(geoNameId, userName);
@@ -276,28 +212,6 @@ namespace NGeo.GeoNames
 		#endregion
 
 		#region [Children]
-
-		/// <summary>
-		/// Returns the children (admin divisions and populated places) for a given geonameId. The children are the
-		/// administrative divisions within an other administrative division, like the counties (ADM2) in a state (ADM1)
-		/// or also the countries in a continent. The leafs are populated places, other feature classes like spots,
-		/// mountains etc are not included in this service. Use
-		/// the <seealso cref="http://www.geonames.org/export/geonames-search.html">search service</seealso> if you need
-		/// other feature classes as well. See
-		/// <seealso cref="http://www.geonames.org/export/place-hierarchy.html#children">Official GeoNames children
-		/// Documentation</seealso> for more information.
-		/// </summary>
-		/// <param name="geoNameId">The GeoName ID of the parent.</param>
-		/// <param name="userName">Your user name.</param>
-		/// <param name="resultStyle">Amount of detail returned by the GeoNames service.
-		/// Default value is full.</param>
-		/// <param name="maxRows">Maximum results returned by the service.
-		/// Default value is 200.</param>
-		/// <returns>The children (admin divisions and populated places) for a given geonameId.</returns>
-		public Task<ReadOnlyCollection<Toponym>> ChildrenAsync(int geonameId, string userName, ResultStyle resultStyle = ResultStyle.Medium, int maxRows = 200)
-		{
-			return SyncToTaskFactory.CreateTask(() => this.Children(geonameId, userName, resultStyle, maxRows));
-		}
 
 		/// <summary>
 		/// Returns the children (admin divisions and populated places) for a given geonameId. The children are the
@@ -349,19 +263,6 @@ namespace NGeo.GeoNames
 		/// <param name="userName">Your user name.</param>
 		/// <returns>Country information : Capital, Population, Area in square km,
 		/// Bounding Box of mainland (excluding offshore islands).</returns>
-		public Task<ReadOnlyCollection<Country>> CountriesAsync(string username)
-		{
-			return SyncToTaskFactory.CreateTask(() => this.Countries(username));
-		}
-
-		/// <summary>
-		/// Country Info (Bounding Box, Capital, Area in square km, Population). See
-		/// <seealso cref="http://www.geonames.org/export/web-services.html#countryInfo">Official
-		/// GeoNames countryInfo Documentation</seealso> for more information.
-		/// </summary>
-		/// <param name="userName">Your user name.</param>
-		/// <returns>Country information : Capital, Population, Area in square km,
-		/// Bounding Box of mainland (excluding offshore islands).</returns>
 		public ReadOnlyCollection<Country> Countries(string userName)
         {
             var response = ChannelCountries(userName);
@@ -397,21 +298,6 @@ namespace NGeo.GeoNames
 		/// <param name="resultStyle">Amount of detail returned by the GeoNames service.
 		/// Default value is full.</param>
 		/// <returns>All GeoNames higher up in the hierarchy of a place name.</returns>
-		public Task<Hierarchy> HierarchyAsync(int geoname, string username, ResultStyle resultStyle = ResultStyle.Medium)
-		{
-			return SyncToTaskFactory.CreateTask(() => this.Hierarchy(geoname, username, resultStyle));
-		}
-
-		/// <summary>
-		/// Returns all GeoNames higher up in the hierarchy of a place name. See
-		/// <seealso cref="http://www.geonames.org/export/place-hierarchy.html#hierarchy">Official GeoNames
-		/// hierarchy Documentation</seealso> for more information.
-		/// </summary>
-		/// <param name="geoNameId">The GeoName ID of the child toponym.</param>
-		/// <param name="userName">Your user name.</param>
-		/// <param name="resultStyle">Amount of detail returned by the GeoNames service.
-		/// Default value is full.</param>
-		/// <returns>All GeoNames higher up in the hierarchy of a place name.</returns>
 		public Hierarchy Hierarchy(int geoNameId, string userName, ResultStyle resultStyle = ResultStyle.Medium)
         {
             var response = ChannelHierarchy(geoNameId, userName, resultStyle);
@@ -435,18 +321,6 @@ namespace NGeo.GeoNames
 		#endregion
 
 		#region [Search]
-
-		/// <summary>
-		/// Returns all GeoNames that match the search string. See
-		/// <seealso cref="http://www.geonames.org/export/geonames-search.html">Official GeoNames
-		/// search Documentation</seealso> for more information.
-		/// </summary>
-		/// <param name="searchOptions">Parameters to configure the search.</param>
-		/// <returns>All GeoNames matching the name search parameter.</returns>
-		public Task<ReadOnlyCollection<Toponym>> SearchAsync(SearchOptions searchOptions)
-		{
-			return SyncToTaskFactory.CreateTask(() => this.Search(searchOptions));
-		}
 
 		/// <summary>
 		/// Returns all GeoNames that match the search string. See
@@ -495,18 +369,6 @@ namespace NGeo.GeoNames
 		#endregion
 
 		#region [TimeZone]
-
-		/// <summary>
-		/// Lookup a postal code by either Latitude/Longitude or Postalcode/Country/LocalCountry See
-		/// <seealso cref="http://www.geonames.org/export/web-services.html#timezone">Official
-		/// GeoNames postalCodeLookup Documentation</seealso> for more information.
-		/// </summary>
-		/// <param name="lookup">Arguments sent to the GeoNames service.</param>
-		/// <returns>The extended timezone for the given latitude and longitude.</returns>
-		public Task<TimeZoneExtended> TimeZoneAsync(TimeZoneLookup lookup)
-		{
-			return SyncToTaskFactory.CreateTask(() => this.TimeZone(lookup));
-		}
 
 		/// <summary>
 		/// Lookup a postal code by either Latitude/Longitude or Postalcode/Country/LocalCountry See

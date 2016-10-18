@@ -5,7 +5,7 @@ using System.ServiceModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Should;
 
-#if (!PCL45)
+#if (NET40)
 using System.ServiceModel.Web;
 #endif
 

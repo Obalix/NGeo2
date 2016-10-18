@@ -15,7 +15,7 @@ namespace NGeo.GeoNames
 
         public void Dispose()
         {
-#if (!PCL45)
+#if (NET40)
 			_client.Dispose();
 #endif
 		}

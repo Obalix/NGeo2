@@ -5,6 +5,7 @@ using System.Text;
 
 namespace System.Threading.Tasks
 {
+#if (!NET40)
 	internal static class SyncToTaskFactory
 	{
 		public static Task<T> CreateTask<T>(Func<T> action)
@@ -52,4 +53,7 @@ namespace System.Threading.Tasks
 			return;
 		}
 	}
+
+#endif
 }
+
