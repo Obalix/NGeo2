@@ -9,7 +9,7 @@ namespace NGeo.GeoNames
 {
     [TestClass]
     public class AlternateNameTests
-    {
+   { 
         [TestMethod]
         public void GeoNames_AlternateName_ShouldBePublic()
         {

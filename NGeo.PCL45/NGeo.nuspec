@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>NGeo2</id>
+		<version>2.0.0</version>
+		<title>NGeo2</title>
+		<authors>Axel Eckenberger</authors>
+		<owners>Axel Eckenberger</owners>
+		<licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+		<projectUrl>https://github.com/Obalix/NGeo</projectUrl>
+		<iconUrl>http://www.gravatar.com/avatar/2b36e5d2ac5fe3c2377466dd98c62d52.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>
+			NGeo is a client library that makes it easier to invoke the
+			GeoNames service from .NET code.
+		</description>
+		<releaseNotes>
+			NGeo is a client library that makes it easier to invoke the
+			GeoNames services from .NET code.
+			Version 2.0.0 is a complete rewrite based on HttpWebRequests making it portable. It is based on the work of Dan Ludwig and John Meyer from The UCosmic Consortium.
+		</releaseNotes>
+		<copyright>Copyright © Axel Eckenberger 2016</copyright>
+		<tags>GeoNames</tags>
+		<dependencies>
+			<group>
+				<dependency id="Newtonsoft.Json" version="9.0.1" />
+				<dependency id="Should" version="1.1.20" />
+				<dependency id="System.Reactive" version="3.0.0" />
+				<dependency id="System.Reactive.Core" version="3.0.0" />
+				<dependency id="System.Reactive.Interfaces" version="3.0.0" />
+				<dependency id="System.Reactive.Linq" version="3.0.0" />
+				<dependency id="System.Reactive.PlatformServices" version="3.0.0" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="bin\Release\NGeo.dll" target="lib\portable-net45+win8" />
+	</files>
+</package>

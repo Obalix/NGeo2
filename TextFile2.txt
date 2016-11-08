@@ -1,0 +1,18 @@
+r.Street = (string)el.Element("street");
+r.MTfcc = (string)el.Element("mtfcc");
+r.StreetNumber = (string)el.Element("streetNumber");
+r.Latitude = (decimal?)el.Element("lat");
+r.Longitude = (decimal?)el.Element("lon");
+r.Distance = (decimal?)el.Element("distance");
+r.PostCode = (string)el.Element("postalcode");
+r.PlaceName = (string)el.Element("placeName");
+r.AdminCode1 = (string)el.Element("adminCode1");
+r.AdminCode2 = (string)el.Element("adminCode2");
+r.AdminName1 = (string)el.Element("adminName1");
+r.AdminName2 = (string)el.Element("adminName2");
+r.CountryCode = (string)el.Element("countryCode");
+
+
+
+\[JsonProperty\("(\w+)"\)\]\r\n\w+ ([\w\?]+) (\w+).*\r\n
+r.$3 = ($2)el.Element("$1");

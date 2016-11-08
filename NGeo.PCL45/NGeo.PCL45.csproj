@@ -1,63 +1,107 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NGeo</RootNamespace>
-    <AssemblyName>NGeo</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;PCL45</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="GeoNames\GeoNamesClient.cs" />
-    <None Include="GeoNames\IInvokeGepNamesServices.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Yahoo\GeoPlanet\GeoPlanetClient.cs" />
-    <None Include="Yahoo\GeoPlanet\IInvokeGeoPlanetServices.cs" />
-    <None Include="Yahoo\PlaceFinder\OAuthClient.cs" />
-    <None Include="Yahoo\PlaceFinder\PlaceFinderClient.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="..\NGeo.Shared\NGeo.Shared.projitems" Label="Shared" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+	<PropertyGroup>
+		<MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<RootNamespace>NGeo</RootNamespace>
+		<AssemblyName>NGeo</AssemblyName>
+		<DefaultLanguage>en-US</DefaultLanguage>
+		<FileAlignment>512</FileAlignment>
+		<ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+		<TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>TRACE;DEBUG;PCL45</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Include="GeoNames\DefaultAttribute.cs" />
+		<Compile Include="GeoNames\GeoNameService.cs" />
+		<Compile Include="GeoNames\Model\NGeoItem.cs" />
+		<Compile Include="GeoNames\Requests\BasicNearbyToponymRequest.cs" />
+		<Compile Include="GeoNames\Requests\FindGeoNameRequest.cs" />
+		<Compile Include="GeoNames\Requests\ExtendedFindNearbyRequest.cs" />
+		<Compile Include="GeoNames\Requests\FindNearbyToponymRequest.cs" />
+		<Compile Include="GeoNames\Requests\FindNearbyPlaceRequest.cs" />
+		<Compile Include="GeoNames\Requests\HierarchyRequest.cs" />
+		<Compile Include="GeoNames\Requests\RequestToQueyrStringConverterExtensions.cs" />
+		<Compile Include="GeoNames\Requests\GeoNameRequest.cs" />
+		<Compile Include="GeoNames\Responses\ErrorResponse.cs" />
+		<Compile Include="GeoNames\Model\Address.cs" />
+		<Compile Include="GeoNames\Model\Enums\CityClass.cs" />
+		<Compile Include="GeoNames\Responses\QueryResponse.cs" />
+		<Compile Include="GeoNames\Model\GeoName.cs" />
+		<Compile Include="Extensions\SyncToTaskFactory.cs" />
+		<Compile Include="Extensions\LinqExtensions.cs" />
+		<Compile Include="Extensions\ReflectionExtensions.cs" />
+		<Compile Include="GeoNames\Exceptions\GeoNamesException.cs" />
+		<Compile Include="GeoNames\Json\GeoNamesExceptionConverter.cs" />
+		<Compile Include="GeoNames\Model\Enums\FeatureClass.cs" />
+		<Compile Include="GeoNames\Model\Enums\Style.cs" />
+		<Compile Include="GeoNames\Responses\ToponymResponse.cs" />
+		<Compile Include="GeoNames\Responses\USAddressResponse.cs" />
+		<Compile Include="GeoNames\SerializationHelper.cs" />
+		<Compile Include="NGeoSettings.cs" />
+		<Compile Include="Properties\AssemblyInfo.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+			<HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="Should, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+			<HintPath>..\packages\Should.1.1.20\lib\Should.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Reactive.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Reactive.Core.3.0.0\lib\netstandard1.1\System.Reactive.Core.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Reactive.Interfaces, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Reactive.Interfaces.3.0.0\lib\netstandard1.0\System.Reactive.Interfaces.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Reactive.Linq, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Reactive.Linq.3.0.0\lib\netstandard1.1\System.Reactive.Linq.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Reactive.PlatformServices, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Reactive.PlatformServices.3.0.0\lib\netstandard1.0\System.Reactive.PlatformServices.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="NGeo.nuspec">
+			<SubType>Designer</SubType>
+		</None>
+		<None Include="packages.config" />
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+	<!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets. -->
+	<!--
+	  <Target Name="BeforeBuild">
+	  </Target>
+	  <Target Name="AfterBuild">
+	  </Target>
+	-->
 </Project>
