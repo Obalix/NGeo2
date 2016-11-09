@@ -3,18 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo.NET40", "NGeo.NET40\NGeo.NET40.csproj", "{C03AD2E1-4728-477D-BC7A-4F0E92A2F9C4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7180D76F-6485-4EB7-9F7B-9DBF7337BEE1}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		changelog.txt = changelog.txt
-		CodeCoverage.testsettings = CodeCoverage.testsettings
 		NGeo.vsmdi = NGeo.vsmdi
+		nupkgs\NGeo2.2.0.0.nupkg = nupkgs\NGeo2.2.0.0.nupkg
 		NGeo2.nuspec = NGeo2.nuspec
 		README.md = README.md
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-		UnitRun.testsettings = UnitRun.testsettings
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{54B67292-CF50-4FD0-9BE5-4F681857E59B}"
@@ -35,19 +31,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Releases", "Releases", "{00
 		nupkgs\NGeo.1.8.0.0.nupkg = nupkgs\NGeo.1.8.0.0.nupkg
 		nupkgs\NGeo.1.8.1.0.nupkg = nupkgs\NGeo.1.8.1.0.nupkg
 		nupkgs\NGeo.1.9.0.0.nupkg = nupkgs\NGeo.1.9.0.0.nupkg
+		nupkgs\NGeo2.2.0.0.nupkg = nupkgs\NGeo2.2.0.0.nupkg
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo2.PCL45", "NGeo.PCL45\NGeo2.PCL45.csproj", "{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo2.PCL45", "NGeo2.PCL45\NGeo2.PCL45.csproj", "{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C9A8DDE5-6E65-458D-B88A-6BC52557EF45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo.Tests.PCL45", "NGeo.Tests.PCL45\NGeo.Tests.PCL45.csproj", "{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo.Tests.PCL45", "NGeo2.Tests.PCL45\NGeo.Tests.PCL45.csproj", "{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo2.Standard", "NGeo2.Standard\NGeo2.Standard.csproj", "{07A03077-D3B8-4CFF-9035-4F365941E785}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "NGeo2.Shared", "NGeo2.Shared\NGeo2.Shared.shproj", "{6A311434-B321-4453-8E20-9CDDACF563BB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Version 1.0", "Version 1.0", "{9FF3D284-B149-4AAF-852F-8D35CE8F19E7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Version 2.0", "Version 2.0", "{52F77EDB-36DC-45EB-A24B-F3AEC302A6B7}"
 EndProject
@@ -62,10 +57,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C03AD2E1-4728-477D-BC7A-4F0E92A2F9C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C03AD2E1-4728-477D-BC7A-4F0E92A2F9C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C03AD2E1-4728-477D-BC7A-4F0E92A2F9C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C03AD2E1-4728-477D-BC7A-4F0E92A2F9C4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -83,7 +74,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C03AD2E1-4728-477D-BC7A-4F0E92A2F9C4} = {9FF3D284-B149-4AAF-852F-8D35CE8F19E7}
 		{007BF774-1259-4AB2-94F4-72098D4F1290} = {7180D76F-6485-4EB7-9F7B-9DBF7337BEE1}
 		{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293} = {52F77EDB-36DC-45EB-A24B-F3AEC302A6B7}
 		{C9A8DDE5-6E65-458D-B88A-6BC52557EF45} = {52F77EDB-36DC-45EB-A24B-F3AEC302A6B7}

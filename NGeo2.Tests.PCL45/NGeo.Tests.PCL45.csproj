@@ -92,13 +92,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NGeo.PCL45\NGeo2.PCL45.csproj">
+    <ProjectReference Include="..\NGeo2.PCL45\NGeo2.PCL45.csproj">
       <Project>{e9d5a5f8-e040-45f3-87b7-4dcbc5bad293}</Project>
       <Name>NGeo2.PCL45</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include=".gitignore" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
