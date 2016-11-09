@@ -7,8 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		changelog.txt = changelog.txt
-		NGeo.vsmdi = NGeo.vsmdi
-		nupkgs\NGeo2.2.0.0.nupkg = nupkgs\NGeo2.2.0.0.nupkg
+		NGeo.sln.DotSettings = NGeo.sln.DotSettings
 		NGeo2.nuspec = NGeo2.nuspec
 		README.md = README.md
 	EndProjectSection
