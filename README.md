@@ -1,12 +1,16 @@
 # NGeo
-NGeo makes it easier for users of geographic data to invoke GeoNames and Yahoo! GeoPlanet services. You'll no longer have to write your own GeoNames or GeoPlanet clients. It's developed in ASP.NET 4.0, and uses WCF ServiceModel libraries to deserialize JSON data into Plain Old C# Objects.
+NGeo makes it easier for users of geographic data to invoke GeoNames service endpoints. You'll no longer have to 
+write your own GeoNames or GeoPlanet clients. It is a complete rewrite using HttpClient and making all calls 
+async. It uses parallel execution when parsing the returned results.
 
 ## How can I use it?
-    using (var geoNamesClient = new NGeo.GeoNames.GeoNamesClient())
-    {
-        var toponym = geoNamesClient.Get(6295630, "demo"); // replace with your own username
-        // do something with the data
-    }
+	var request = new FindNearbyToponymRequest() {
+		UserName = "userName",
+		Latitude = 47.3m,
+		Longitude = 9m,
+		Style = Style.FULL
+	};
+	var response = await GeoNameService.FindNearbyToponym(request);
 
 ## New in version 1.8 - Breaking Changes
 The PlaceFinder client was removed in version 1.8.0.0, because that service is no longer available as a WCF-consumable API. It was then re-added in version 1.8.1.0 with an OAuth client implementation. Note that the Yahoo! PlaceFinder service is now part of Yahoo!'s [BOSS GEO Services](http://developer.yahoo.com/boss/geo/), and is no longer free. To use the NGeo PlaceFinder client, you must first sign up for BOSS GEO, obtain a Consumer Key and Consumer Secret, and give Yahoo! a valid credit card number for billing. No builds or revisions in version 1.8.x.y affect either the GeoNames or GeoPlanet clients.
@@ -21,34 +25,34 @@ Because each NGeo service comes with a corresponding IConsumeXyz interface, you 
 
 Today there are two new interfaces: `IContainGeoNames` and `IContainGeoPlanet`. These are nearly identical to their respective IConsumeGeo predecessors, except that their methods do not contain username or app id parameters. Instead, they expect the implementation class will already know the auth credential. Each class has a default implementation, named `GeoNamesContainer` and `GeoPlanetContainer` respectively. Each of these classes has a constructor that accepts a string for your geonames user name or geoplanet app id. You can use them in your IoC container to resolve the auth dependency at runtime. Let's look at an example using SimpleInjector:
 
-    //  each time the service is requested, construct a new instance with the auth credential
-    simpleInjectorContainer.RegisterPerWebRequest<IContainGeoNames>(() =>
-        new GeoNamesContainer(ConfigurationManager.AppSettings["GeoNamesUserName"]));
+	//  each time the service is requested, construct a new instance with the auth credential
+	simpleInjectorContainer.RegisterPerWebRequest<IContainGeoNames>(() =>
+		new GeoNamesContainer(ConfigurationManager.AppSettings["GeoNamesUserName"]));
 
-    simpleInjectorContainer.RegisterPerWebRequest<IContainGeoPlanet>(() =>
-        new GeoPlanetContainer(ConfigurationManager.AppSettings["GeoPlanetAppId"]));
+	simpleInjectorContainer.RegisterPerWebRequest<IContainGeoPlanet>(() =>
+		new GeoPlanetContainer(ConfigurationManager.AppSettings["GeoPlanetAppId"]));
 
 With that registration, you can do something like this:
 
-    public class GeoController : Controller
-    {
-        private readonly IContainGeoNames _geoNames;
-        private readonly IContainGeoPlanet _geoPlanet;
+	public class GeoController : Controller
+	{
+		private readonly IContainGeoNames _geoNames;
+		private readonly IContainGeoPlanet _geoPlanet;
 
-        public GeoController(IContainGeoNames geoNames, IContainGeoPlanet geoPlanet)
-        {
-            _geoNames = geoNames;
-            _geoPlanet = geoPlanet;
-        }
+		public GeoController(IContainGeoNames geoNames, IContainGeoPlanet geoPlanet)
+		{
+			_geoNames = geoNames;
+			_geoPlanet = geoPlanet;
+		}
 
-        public ActionResult DoSomeWork()
-        {
-            // no auth arg required
-            var gnEarth = _geoNames.Get(6295630);
-            var gpEarth = _geoPlanet.Place(1);
-            return View();
-        }
-    }
+		public ActionResult DoSomeWork()
+		{
+			// no auth arg required
+			var gnEarth = _geoNames.Get(6295630);
+			var gpEarth = _geoPlanet.Place(1);
+			return View();
+		}
+	}
 
 The actual `GeoNamesContainer` and `GeoPlanetContainer` classes just wrap a respective Client instance along with the auth string passed to the constructor, and delegate all method invocations to the client. So you will always get the same results, the only difference is these new interfaces hide the auth credential from you.
 

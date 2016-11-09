@@ -16,6 +16,7 @@ namespace NGeo
 		public async Task FindNearbyPopulatedPlace_NoUserName()
 		{
 			var request = new FindNearbyPlaceRequest() {
+				UserName = "",
 				Latitude = 47.3m,
 				Longitude = 9m,
 				Style = Style.FULL
@@ -38,7 +39,6 @@ namespace NGeo
 		public async Task FindNearbyPopulatedPlace_EuropeanLocation_047300000N_09000000E()
 		{
 			var request = new FindNearbyPlaceRequest() {
-				UserName = "obalix",
 				Latitude = 47.3m,
 				Longitude = 9m,
 				Style = Style.FULL
@@ -62,7 +62,6 @@ namespace NGeo
 		public async Task FindNearbyPopulatedPlace_UsLocation_USA_047613959N_122320833W()
 		{
 			var request = new FindNearbyPlaceRequest() {
-				UserName = "obalix",
 				Latitude = 47.613959m,
 				Longitude = -122.320833m,
 				Style = Style.FULL

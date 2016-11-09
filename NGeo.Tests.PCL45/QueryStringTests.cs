@@ -24,7 +24,7 @@ namespace NGeo
 			};
 
 			var ci = CultureInfo.InvariantCulture;
-			var st = Invariant($"{C_Svc_ExtendedFindNearby}?style={request.Style.ToString()}&lat={request.Latitude}&lng={request.Longitude}");
+			var st = Invariant($"{C_Svc_ExtendedFindNearby}?username={Properties.Settings.Default.UserName}&style={request.Style.ToString()}&lat={request.Latitude}&lng={request.Longitude}");
 			var reference = new Uri(S_BaseAddress, st);
 			var result = new Uri(S_BaseAddress, request.ToQueryString(C_Svc_ExtendedFindNearby));
 			var c = Uri.Compare(reference, result, UriComponents.HttpRequestUrl, UriFormat.Unescaped, StringComparison.OrdinalIgnoreCase);
@@ -42,7 +42,7 @@ namespace NGeo
 			};
 
 			var ci = CultureInfo.InvariantCulture;
-			var st = Invariant($"{C_Svc_ExtendedFindNearby}?lat={request.Latitude}&lng={request.Longitude}");
+			var st = Invariant($"{C_Svc_ExtendedFindNearby}?username={Properties.Settings.Default.UserName}&lat={request.Latitude}&lng={request.Longitude}");
 			var reference = new Uri(S_BaseAddress, st);
 			var result = new Uri(S_BaseAddress, request.ToQueryString(C_Svc_ExtendedFindNearby));
 			var c = Uri.Compare(reference, result, UriComponents.HttpRequestUrl, UriFormat.Unescaped, StringComparison.OrdinalIgnoreCase);

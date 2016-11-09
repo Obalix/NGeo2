@@ -16,6 +16,7 @@ namespace NGeo
 		public async Task GetHierarchy_NoUserName()
 		{
 			var request = new HierarchyRequest() {
+				UserName = "",
 				GeoNameId = 7910950,
 				Style = Style.FULL
 			};
@@ -35,7 +36,6 @@ namespace NGeo
 		public async Task GetHierarchy_EuropeanLocation_047300000N_09000000E()
 		{
 			var request = new HierarchyRequest() {
-				UserName = "obalix",
 				GeoNameId = 7910950,
 				Style = Style.FULL
 			};
@@ -64,7 +64,6 @@ namespace NGeo
 		public async Task GetHierarchy_UsLocation_USA_047613959N_122320833W()
 		{
 			var request = new HierarchyRequest() {
-				UserName = "obalix",
 				GeoNameId = 5789123,
 				Style = Style.FULL
 			};

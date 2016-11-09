@@ -8,7 +8,7 @@
 		<owners>Axel Eckenberger</owners>
 		<licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
 		<projectUrl>https://github.com/Obalix/NGeo</projectUrl>
-		<iconUrl>http://www.gravatar.com/avatar/2b36e5d2ac5fe3c2377466dd98c62d52.png</iconUrl>
+		<!--<iconUrl>http://www.gravatar.com/avatar/2b36e5d2ac5fe3c2377466dd98c62d52.png</iconUrl>-->
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>
 			NGeo is a client library that makes it easier to invoke the
@@ -24,16 +24,23 @@
 		<dependencies>
 			<group>
 				<dependency id="Newtonsoft.Json" version="9.0.1" />
-				<dependency id="Should" version="1.1.20" />
-				<dependency id="System.Reactive" version="3.0.0" />
+			</group>
+
+			<group targetFramework="portable-net45+win8">
 				<dependency id="System.Reactive.Core" version="3.0.0" />
 				<dependency id="System.Reactive.Interfaces" version="3.0.0" />
 				<dependency id="System.Reactive.Linq" version="3.0.0" />
-				<dependency id="System.Reactive.PlatformServices" version="3.0.0" />
+			</group>
+
+			<group targetFramework="netstandard1.1">
+				<dependency id="System.Reactive.Core" version="3.1.0" />
+				<dependency id="System.Reactive.Interfaces" version="3.1.0" />
+				<dependency id="System.Reactive.Linq" version="3.1.0" />
 			</group>
 		</dependencies>
 	</metadata>
 	<files>
-		<file src="bin\Release\NGeo.dll" target="lib\portable-net45+win8" />
+		<file src="NGeo.Tests.PCL45\bin\Release\NGeo2.dll" target="lib\portable-net45+win8" />
+		<file src="NGeo2.Standard\bin\Release\NGeo2.dll" target="lib\netstandard1.1" />
 	</files>
 </package>

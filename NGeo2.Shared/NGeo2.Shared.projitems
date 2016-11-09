@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>6a311434-b321-4453-8e20-9cddacf563bb</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>NGeo2.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\LinqExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ReflectionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\SyncToTaskFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\DefaultAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Exceptions\GeoNamesException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\GeoNameService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Json\GeoNamesExceptionConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Model\Address.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Model\Enums\CityClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Model\Enums\FeatureClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Model\Enums\Style.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Model\GeoName.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Model\NGeoItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\BasicNearbyToponymRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\ExtendedFindNearbyRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\FindGeoNameRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\FindNearbyPlaceRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\FindNearbyToponymRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\GeoNameRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\HierarchyRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\RequestToQueyrStringConverterExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Responses\ErrorResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Responses\QueryResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Responses\ToponymResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Responses\USAddressResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\SerializationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NGeoSettings.cs" />
+  </ItemGroup>
+</Project>

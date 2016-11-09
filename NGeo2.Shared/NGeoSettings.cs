@@ -14,5 +14,12 @@ namespace NGeo
 			get { return s_maxParallelThreads; }
 			set { s_maxParallelThreads = Math.Min((byte)1, value); }
 		}
+
+		private static string s_userName = "";
+		public static string UserName
+		{
+			get { return s_userName; }
+			set { s_userName = value; }
+		}
 	}
 }
