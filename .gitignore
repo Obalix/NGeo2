@@ -39,7 +39,7 @@ Packages/
 *.nupkg
 
 #Allow released nupkg files
-!nupkg/NGeo*.nupkg
+!NGeo*.nupkg
 
 #Ignore local testsettings
 Local.testsettings

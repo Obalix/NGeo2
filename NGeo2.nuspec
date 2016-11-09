@@ -40,7 +40,7 @@
 		</dependencies>
 	</metadata>
 	<files>
-		<file src="NGeo.Tests.PCL45\bin\Release\NGeo2.dll" target="lib\portable-net45+win8" />
-		<file src="NGeo2.Standard\bin\Release\NGeo2.dll" target="lib\netstandard1.1" />
+		<file src="NGeo2.PCL45\bin\Release\NGeo2.*" target="lib\portable-net45+win8" />
+		<file src="NGeo2.Standard1.1\bin\Release\NGeo2.*" target="lib\netstandard1.1" />
 	</files>
 </package>
