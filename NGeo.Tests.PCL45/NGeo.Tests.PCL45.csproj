@@ -74,35 +74,19 @@
     <Compile Include="GNS_FindNearbyToponymTests.cs" />
     <Compile Include="LiveTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
     <Compile Include="QueryStringTests.cs" />
     <Compile Include="GNS_ExtendedFindNearbyTests.cs" />
     <Compile Include="GNS_FindNearbyPopulatedPlaceTests.cs" />
     <Compile Include="AssemblyMethods.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NGeo.PCL45\NGeo2.PCL45.csproj">
       <Project>{e9d5a5f8-e040-45f3-87b7-4dcbc5bad293}</Project>
       <Name>NGeo2.PCL45</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include=".gitignore" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
