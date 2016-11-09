@@ -28,6 +28,23 @@ namespace NGeo.GeoNames.Responses
 					}
 					else
 					{
+#if (NET40)
+						await SyncToTaskFactory.CreateTask(
+							() => {
+								r.Items = (
+										el.Elements("geoname")
+											.ToObservable()
+											.Select((x, i) => Observable.FromAsync(async t => new { i = i, t = await GeoName.FromXml(x) }))
+											.Merge(NGeoSettings.MaxParallelThreads)
+											.ToEnumerable()
+											.ToArray()
+									)
+									.OrderBy(x => x.i)
+									.Select(x => x.t)
+									.ToArray();
+							}
+						);
+#else
 						r.Items = (
 								await el.Elements("geoname")
 									.ToObservable()
@@ -38,6 +55,7 @@ namespace NGeo.GeoNames.Responses
 							.OrderBy(x => x.i)
 							.Select(x => x.t)
 							.ToArray();
+#endif
 					}
 				}
 			);
@@ -45,10 +63,10 @@ namespace NGeo.GeoNames.Responses
 
 		#region [Results]
 
-		[JsonProperty("geonames")]
-		public override GeoName[] Items { get; protected set; }
+				[JsonProperty("geonames")]
+				public override GeoName[] Items { get; protected set; }
 
-		NGeoItem[] IGeoNameResponse.Items { get { return this.Items; } }
+				NGeoItem[] IGeoNameResponse.Items { get { return this.Items; } }
 
 		#endregion
 	}

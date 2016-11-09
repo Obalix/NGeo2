@@ -37,7 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo2.PCL45", "NGeo2.PCL45\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C9A8DDE5-6E65-458D-B88A-6BC52557EF45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo.Tests.PCL45", "NGeo2.Tests.PCL45\NGeo.Tests.PCL45.csproj", "{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo2.Tests.PCL45", "NGeo2.Tests.PCL45\NGeo2.Tests.PCL45.csproj", "{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo2.Standard1.1", "NGeo2.Standard1.1\NGeo2.Standard1.1.csproj", "{07A03077-D3B8-4CFF-9035-4F365941E785}"
 EndProject
@@ -45,11 +45,16 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "NGeo2.Shared", "NGeo2.Share
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Version 2.0", "Version 2.0", "{52F77EDB-36DC-45EB-A24B-F3AEC302A6B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo2.NET40", "NGeo2.NET40\NGeo2.NET40.csproj", "{F8A91977-38C1-4E65-AC4B-00C413CFE841}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo2.Tests.NET40", "NGeo2.Tests.NET40\NGeo2.Tests.NET40.csproj", "{6EE7AF2A-0FB4-4C25-BFF7-035BAAF874CE}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		NGeo2.Shared\NGeo2.Shared.projitems*{07a03077-d3b8-4cff-9035-4f365941e785}*SharedItemsImports = 4
 		NGeo2.Shared\NGeo2.Shared.projitems*{6a311434-b321-4453-8e20-9cddacf563bb}*SharedItemsImports = 13
 		NGeo2.Shared\NGeo2.Shared.projitems*{e9d5a5f8-e040-45f3-87b7-4dcbc5bad293}*SharedItemsImports = 4
+		NGeo2.Shared\NGeo2.Shared.projitems*{f8a91977-38c1-4e65-ac4b-00c413cfe841}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +73,14 @@ Global
 		{07A03077-D3B8-4CFF-9035-4F365941E785}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07A03077-D3B8-4CFF-9035-4F365941E785}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07A03077-D3B8-4CFF-9035-4F365941E785}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8A91977-38C1-4E65-AC4B-00C413CFE841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A91977-38C1-4E65-AC4B-00C413CFE841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A91977-38C1-4E65-AC4B-00C413CFE841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A91977-38C1-4E65-AC4B-00C413CFE841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EE7AF2A-0FB4-4C25-BFF7-035BAAF874CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EE7AF2A-0FB4-4C25-BFF7-035BAAF874CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EE7AF2A-0FB4-4C25-BFF7-035BAAF874CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EE7AF2A-0FB4-4C25-BFF7-035BAAF874CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +92,8 @@ Global
 		{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1} = {C9A8DDE5-6E65-458D-B88A-6BC52557EF45}
 		{07A03077-D3B8-4CFF-9035-4F365941E785} = {52F77EDB-36DC-45EB-A24B-F3AEC302A6B7}
 		{6A311434-B321-4453-8E20-9CDDACF563BB} = {52F77EDB-36DC-45EB-A24B-F3AEC302A6B7}
+		{F8A91977-38C1-4E65-AC4B-00C413CFE841} = {52F77EDB-36DC-45EB-A24B-F3AEC302A6B7}
+		{6EE7AF2A-0FB4-4C25-BFF7-035BAAF874CE} = {C9A8DDE5-6E65-458D-B88A-6BC52557EF45}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = NGeo.vsmdi

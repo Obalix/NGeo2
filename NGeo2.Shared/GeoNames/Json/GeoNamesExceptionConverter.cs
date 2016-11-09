@@ -12,7 +12,11 @@ namespace NGeo.GeoNames.Json
 	{
 		public override bool CanConvert(Type objectType)
 		{
+#if (NET40)
+			return objectType.IsSameOrSublcass(typeof(GeoNamesException));
+#else
 			return objectType.GetTypeInfo().IsSameOrSubClass(typeof(GeoNamesException));
+#endif
 		}
 
 		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)

@@ -65,4 +65,5 @@ UCosmic.Www.Mvc.Publish.xml
 /Private/
 
 #Ignore test app.config
-NGeo2.Tests.PCL45/app.config
+#NGeo2.Tests.PCL45/app.config
+#NGeo2.Tests.NET40/app.config

@@ -5,6 +5,18 @@ namespace System.Reflection
 {
 	internal static class ReflectionExtensions
 	{
+#if (NET40)
+		public static bool IsSameOrSublcass(this Type subclass, Type baseclass) 
+			=> subclass.IsSubclassOf(baseclass) || subclass == baseclass;
+
+		public static IEnumerable<Type> BaseClasses(this Type subclass)
+		{
+			if (subclass == null || subclass.BaseType == null) return Enumerable.Empty<Type>();
+
+			return Enumerable.Repeat(subclass.BaseType, 1)
+				.Concat(BaseClasses(subclass.BaseType));
+		}
+#else
 		public static bool IsSameOrSubClass(this TypeInfo subclass, TypeInfo baseclass)
 			=> subclass.IsSubclassOf(baseclass.AsType()) || subclass == baseclass;
 
@@ -21,5 +33,6 @@ namespace System.Reflection
 			return Enumerable.Repeat(subclass.BaseType, 1)
 				.Concat(BaseClasses(subclass.BaseType));
 		}
+#endif
 	}
 }

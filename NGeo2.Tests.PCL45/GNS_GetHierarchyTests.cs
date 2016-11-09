@@ -12,7 +12,15 @@ namespace NGeo
 	[TestClass]
 	public class GNS_GetHierarchyTests
 	{
+#if (NET40)
 		[TestMethod]
+		public void GetHierarchy_NoUserName_Sync()
+		{
+			this.GetHierarchy_NoUserName().Wait();
+		}
+#else
+		[TestMethod]
+#endif
 		public async Task GetHierarchy_NoUserName()
 		{
 			var request = new HierarchyRequest() {
@@ -32,7 +40,15 @@ namespace NGeo
 			errorResponse.Exception.ErrorCode.ShouldEqual(10);
 		}
 
+#if (NET40)
 		[TestMethod]
+		public void GetHierarchy_EuropeanLocation_047300000N_09000000E_Sync()
+		{
+			this.GetHierarchy_EuropeanLocation_047300000N_09000000E().Wait();
+		}
+#else
+		[TestMethod]
+#endif
 		public async Task GetHierarchy_EuropeanLocation_047300000N_09000000E()
 		{
 			var request = new HierarchyRequest() {
@@ -60,7 +76,15 @@ namespace NGeo
 			toponymResponse.Items[7].TopynymId.ShouldEqual(7910950);
 		}
 
+#if (NET40)
 		[TestMethod]
+		public void GetHierarchy_UsLocation_USA_047613959N_122320833W_Sync()
+		{
+			this.GetHierarchy_UsLocation_USA_047613959N_122320833W().Wait();
+		}
+#else
+		[TestMethod]
+#endif
 		public async Task GetHierarchy_UsLocation_USA_047613959N_122320833W()
 		{
 			var request = new HierarchyRequest() {

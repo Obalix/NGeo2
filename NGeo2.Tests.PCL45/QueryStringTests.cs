@@ -4,7 +4,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NGeo.GeoNames.Model;
 using NGeo.GeoNames.Requests;
 using Should;
+
+#if (!NET40)
+
 using static System.FormattableString;
+
+#endif
 
 namespace NGeo
 {
@@ -24,7 +29,21 @@ namespace NGeo
 			};
 
 			var ci = CultureInfo.InvariantCulture;
-			var st = Invariant($"{C_Svc_ExtendedFindNearby}?username={Properties.Settings.Default.UserName}&style={request.Style.ToString()}&lat={request.Latitude}&lng={request.Longitude}");
+#if (NET40)
+			var st = String.Format(
+				CultureInfo.InvariantCulture,
+				"{0}?username={1}&style={2}&lat={3}&lng={4}",
+				C_Svc_ExtendedFindNearby,
+				Properties.Settings.Default.UserName,
+				request.Style.ToString(),
+				request.Latitude,
+				request.Longitude
+			);
+#else
+			var st = Invariant(
+				$"{C_Svc_ExtendedFindNearby}?username={Properties.Settings.Default.UserName}&style={request.Style.ToString()}&lat={request.Latitude}&lng={request.Longitude}"
+			);
+#endif
 			var reference = new Uri(S_BaseAddress, st);
 			var result = new Uri(S_BaseAddress, request.ToQueryString(C_Svc_ExtendedFindNearby));
 			var c = Uri.Compare(reference, result, UriComponents.HttpRequestUrl, UriFormat.Unescaped, StringComparison.OrdinalIgnoreCase);
@@ -42,7 +61,18 @@ namespace NGeo
 			};
 
 			var ci = CultureInfo.InvariantCulture;
+#if (NET40)
+			var st = String.Format(
+				CultureInfo.InvariantCulture,
+				"{0}?username={1}&lat={2}&lng={3}",
+				C_Svc_ExtendedFindNearby,
+				Properties.Settings.Default.UserName,
+				request.Latitude,
+				request.Longitude
+			);
+#else
 			var st = Invariant($"{C_Svc_ExtendedFindNearby}?username={Properties.Settings.Default.UserName}&lat={request.Latitude}&lng={request.Longitude}");
+#endif
 			var reference = new Uri(S_BaseAddress, st);
 			var result = new Uri(S_BaseAddress, request.ToQueryString(C_Svc_ExtendedFindNearby));
 			var c = Uri.Compare(reference, result, UriComponents.HttpRequestUrl, UriFormat.Unescaped, StringComparison.OrdinalIgnoreCase);

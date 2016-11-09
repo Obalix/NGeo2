@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NGeo.GeoNames.Model;
 using NGeo.GeoNames.Responses;
 using Should;
 
@@ -15,7 +12,15 @@ namespace NGeo
 	[TestClass]
 	public class LiveTests
 	{
+#if (NET40)
 		[TestMethod]
+		public void Live_extendedFindNearby_047300000N_09000000E_full_Sync()
+		{
+			this.Live_extendedFindNearby_047300000N_09000000E_full().Wait();
+		}
+#else
+		[TestMethod]
+#endif
 		public async Task Live_extendedFindNearby_047300000N_09000000E_full()
 		{
 			var client = new HttpClient();
@@ -38,7 +43,15 @@ namespace NGeo
 			}
 		}
 
+#if (NET40)
 		[TestMethod]
+		public void Live_extendedFindByNearby_USA_047613959N_122320833W_Sync()
+		{
+			this.Live_extendedFindByNearby_USA_047613959N_122320833W().Wait();
+		}
+#else
+		[TestMethod]
+#endif
 		public async Task Live_extendedFindByNearby_USA_047613959N_122320833W()
 		{
 			var client = new HttpClient();
@@ -61,7 +74,15 @@ namespace NGeo
 			}
 		}
 
+#if (NET40)
 		[TestMethod]
+		public void Live_extendedFindByNearby_CAN_49285619N_123123184W_Sync()
+		{
+			this.Live_extendedFindByNearby_CAN_49285619N_123123184W().Wait();
+		}
+#else
+		[TestMethod]
+#endif
 		public async Task Live_extendedFindByNearby_CAN_49285619N_123123184W()
 		{
 			var client = new HttpClient();
@@ -84,7 +105,15 @@ namespace NGeo
 			}
 		}
 
+#if (NET40)
 		[TestMethod]
+		public void Live_findNearby_047300000N_09000000E_full_Sync()
+		{
+			this.Live_findNearby_047300000N_09000000E_full().Wait();
+		}
+#else
+		[TestMethod]
+#endif
 		public async Task Live_findNearby_047300000N_09000000E_full()
 		{
 			var client = new HttpClient();
@@ -107,7 +136,15 @@ namespace NGeo
 			}
 		}
 
+#if (NET40)
 		[TestMethod]
+		public void Live_findNearbyPlaceName_047300000N_09000000E_full_Sync()
+		{
+			this.Live_findNearbyPlaceName_047300000N_09000000E_full().Wait();
+		}
+#else
+		[TestMethod]
+#endif
 		public async Task Live_findNearbyPlaceName_047300000N_09000000E_full()
 		{
 			var client = new HttpClient();

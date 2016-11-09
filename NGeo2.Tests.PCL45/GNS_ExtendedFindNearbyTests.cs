@@ -12,7 +12,15 @@ namespace NGeo
 	[TestClass]
 	public class GNS_ExtendedFindNearbyTests
 	{
+#if (NET40)
 		[TestMethod]
+		public void ExtendedFindNearby_NoUserName_Sync()
+		{
+			this.ExtendedFindNearby_NoUserName().Wait();
+		}
+#else
+		[TestMethod]
+#endif
 		public async Task ExtendedFindNearby_NoUserName()
 		{
 			var request = new ExtendedFindNearbyRequest() {
@@ -34,7 +42,15 @@ namespace NGeo
 			errorResponse.Exception.ErrorCode.ShouldEqual(10);
 		}
 
+#if (NET40)
 		[TestMethod]
+		public void ExtendedFindNearby_EuropeanLocation_047300000N_09000000E_Sync()
+		{
+			this.ExtendedFindNearby_EuropeanLocation_047300000N_09000000E().Wait();
+		}
+#else
+		[TestMethod]
+#endif
 		public async Task ExtendedFindNearby_EuropeanLocation_047300000N_09000000E()
 		{
 			var request = new ExtendedFindNearbyRequest() {
@@ -63,7 +79,15 @@ namespace NGeo
 			toponymResponse.Items[7].TopynymId.ShouldEqual(7910950);
 		}
 
+#if (NET40)
 		[TestMethod]
+		public void ExtendedFindNearby_UsLocation_USA_047613959N_122320833W_Sync()
+		{
+			this.ExtendedFindNearby_UsLocation_USA_047613959N_122320833W().Wait();
+		}
+#else
+		[TestMethod]
+#endif
 		public async Task ExtendedFindNearby_UsLocation_USA_047613959N_122320833W()
 		{
 			var request = new ExtendedFindNearbyRequest() {

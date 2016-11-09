@@ -49,16 +49,30 @@ namespace NGeo.GeoNames.Model
 					r.ToponymName = (string)el.Element("toponymName");
 					r.FeatureClass = el.Element("fcl").SafeConvert(e => (FeatureClass)Enum.Parse(typeof(FeatureClass), (string)e, true), FeatureClass.Unknown);
 					r.Timezone = await Timezone.FromXml(el.Element("timezone"));
+#if (NET40)
+					r.AlternateNames = (
+							el.Elements("alternativeName")
+								.ToObservable()
+								.Select((an, i) => Observable.FromAsync(async t => new { i = i, an = await AlternateName.FromXml(an) }))
+								.Concat()
+								.ToEnumerable()
+								.ToArray()
+						)
+						.OrderBy(x => x.i)
+						.Select(x => x.an)
+						.ToArray();
+#else
 					r.AlternateNames = (
 							await el.Elements("alternativeName")
 								.ToObservable()
-								.Select((an , i) => Observable.FromAsync(async t => new { i = i, an = await AlternateName.FromXml(an) }))
+								.Select((an, i) => Observable.FromAsync(async t => new { i = i, an = await AlternateName.FromXml(an) }))
 								.Concat()
 								.ToArray()
 						)
 						.OrderBy(x => x.i)
 						.Select(x => x.an)
 						.ToArray();
+#endif
 				}
 			);
 		}

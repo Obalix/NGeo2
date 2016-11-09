@@ -30,23 +30,36 @@ namespace NGeo.GeoNames.Responses
 					}
 					else
 					{
+#if (NET40)
+						await SyncToTaskFactory.CreateTask(
+							() => {
+								r.Items = el.Elements("address")
+									.ToObservable()
+									.Select(x => Observable.FromAsync(async t => await Address.FromXml(x)))
+									.Merge(NGeoSettings.MaxParallelThreads)
+									.ToEnumerable()
+									.ToArray();
+							}
+						);
+#else
 						r.Items = await el.Elements("address")
 							.ToObservable()
 							.Select(x => Observable.FromAsync(async t => await Address.FromXml(x)))
 							.Merge(NGeoSettings.MaxParallelThreads)
 							.ToArray();
+#endif
 					}
 				}
 			);
 		}
 
-		#region [Results]
+#region [Results]
 
 		[JsonProperty("addresses")]
 		public override Address[] Items { get; protected set; }
 
 		NGeoItem[] IGeoNameResponse.Items { get { return this.Items; } }
 
-		#endregion
+#endregion
 	}
 }
