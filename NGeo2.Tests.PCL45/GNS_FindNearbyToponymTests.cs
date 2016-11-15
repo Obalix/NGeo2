@@ -104,5 +104,36 @@ namespace NGeo
 
 			toponymResponse.Items[0].TopynymId.ShouldEqual(5793415);
 		}
+
+#if (NET40)
+		[TestMethod]
+		public void FFindNearbyToponym_Execute_EuropeanLocation_047300000N_09000000E_Sync()
+		{
+			this.FindNearbyToponym_Execute_EuropeanLocation_047300000N_09000000E().Wait();
+		}
+#else
+		[TestMethod]
+#endif
+		public async Task FindNearbyToponym_Execute_EuropeanLocation_047300000N_09000000E()
+		{
+			var request = new FindNearbyToponymRequest() {
+				Latitude = 47.3m,
+				Longitude = 9m,
+				Style = Style.FULL
+			};
+
+			var response = await request.Execute();
+
+			response.ShouldNotBeNull();
+			response.Items.ShouldNotBeNull();
+			response.Items.Length.ShouldEqual(1);
+			response.ShouldBeType<GeoNameResponse>();
+
+			var toponymResponse = response as GeoNameResponse;
+			toponymResponse.ShouldNotBeNull();
+			toponymResponse.Items.Length.ShouldEqual(1);
+
+			toponymResponse.Items[0].TopynymId.ShouldEqual(10628563);
+		}
 	}
 }

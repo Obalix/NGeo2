@@ -17,7 +17,17 @@
 		<releaseNotes>
 			NGeo is a client library that makes it easier to invoke the
 			GeoNames services from .NET code.
-			Version 2.0.0 is a complete rewrite based on HttpWebRequests making it portable. It is based on the work of Dan Ludwig and John Meyer from The UCosmic Consortium.
+
+			It is based on the work of Dan Ludwig and John Meyer from The UCosmic Consortium.
+
+			2.0.0
+			- Complete rewrite of the data types and the service based on the HttpClient class.
+			- Libraries for: PCL (Profile7), Standard1.1 and NET 4.0
+			- Currently supported GeoNames endpoints:
+				* extendedFindNearby
+				* findNearbyPlaceName
+				* findNearby
+				* hierarchy
 		</releaseNotes>
 		<copyright>Copyright © Axel Eckenberger 2016</copyright>
 		<tags>GeoNames</tags>
@@ -37,10 +47,21 @@
 				<dependency id="System.Reactive.Interfaces" version="3.1.0" />
 				<dependency id="System.Reactive.Linq" version="3.1.0" />
 			</group>
+
+			<group targetFramework="net40">
+				<dependency id="Microsoft.Bcl" version="1.1.10" />
+				<dependency id="Microsoft.Bcl.Async" version="1.0.168" />
+				<dependency id="Microsoft.Bcl.Build" version="1.0.21" />
+				<dependency id="Microsoft.Net.Http" version="2.2.29" />
+				<dependency id="Rx-Core" version="2.2.5" />
+				<dependency id="Rx-Interfaces" version="2.2.5" />
+				<dependency id="Rx-Linq" version="2.2.5" />
+			</group>
 		</dependencies>
 	</metadata>
 	<files>
 		<file src="NGeo2.PCL45\bin\Release\NGeo2.*" target="lib\portable-net45+win8" />
 		<file src="NGeo2.Standard1.1\bin\Release\NGeo2.*" target="lib\netstandard1.1" />
+		<file src="Ngeo2.NET40\bin\Release\Ngeo2.*" target="lib\net40" />
 	</files>
 </package>

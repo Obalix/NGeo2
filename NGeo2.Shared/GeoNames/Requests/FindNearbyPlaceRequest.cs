@@ -14,7 +14,7 @@ namespace NGeo.GeoNames.Requests
 	/// cities: optional filter parameter with three possible values 'cities1000', 'cities5000','cities15000'. See the download readme for further infos
 	/// Result : returns the closest populated place (feature class=P) for the lat/lng query as xml document.The unit of the distance element is 'km'. 
 	/// </summary>
-	public class FindNearbyPlaceRequest : FindNearbyGeoNameRequest
+	public class FindNearbyPopulatedPlaceRequest : FindNearbyGeoNameRequest
 	{
 		[JsonProperty("lang", Order = 1)]
 		// defaut = local

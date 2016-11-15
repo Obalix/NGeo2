@@ -109,5 +109,41 @@ namespace NGeo
 			toponymResponse.Items[4].TopynymId.ShouldEqual(5799783);
 			toponymResponse.Items[5].TopynymId.ShouldEqual(5789123);
 		}
+
+#if (NET40)
+		[TestMethod]
+		public void GetHierarchy_Execute_EuropeanLocation_047300000N_09000000E_Sync()
+		{
+			this.GetHierarchy_Execute_EuropeanLocation_047300000N_09000000E().Wait();
+		}
+#else
+		[TestMethod]
+#endif
+		public async Task GetHierarchy_Execute_EuropeanLocation_047300000N_09000000E()
+		{
+			var request = new HierarchyRequest() {
+				GeoNameId = 7910950,
+				Style = Style.FULL
+			};
+			var response = await request.Execute();
+
+			response.ShouldNotBeNull();
+			response.Items.ShouldNotBeNull();
+			response.Items.Length.ShouldEqual(8);
+			response.ShouldBeType<GeoNameResponse>();
+
+			var toponymResponse = response as GeoNameResponse;
+			toponymResponse.ShouldNotBeNull();
+			toponymResponse.Items.Length.ShouldEqual(8);
+
+			toponymResponse.Items[0].TopynymId.ShouldEqual(6295630);
+			toponymResponse.Items[1].TopynymId.ShouldEqual(6255148);
+			toponymResponse.Items[2].TopynymId.ShouldEqual(2658434);
+			toponymResponse.Items[3].TopynymId.ShouldEqual(2658821);
+			toponymResponse.Items[4].TopynymId.ShouldEqual(7285001);
+			toponymResponse.Items[5].TopynymId.ShouldEqual(7286562);
+			toponymResponse.Items[6].TopynymId.ShouldEqual(6559633);
+			toponymResponse.Items[7].TopynymId.ShouldEqual(7910950);
+		}
 	}
 }

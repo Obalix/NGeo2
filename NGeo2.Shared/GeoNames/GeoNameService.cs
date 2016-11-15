@@ -56,7 +56,7 @@ namespace NGeo.GeoNames
 
 		#region [FindNearbyPopulatedPlace]
 
-		public static async Task<IGeoNameResponse> FindNearbyPopulatedPlace(FindNearbyPlaceRequest request, int maxTries = 1)
+		public static async Task<IGeoNameResponse> FindNearbyPopulatedPlace(FindNearbyPopulatedPlaceRequest request, int maxTries = 1)
 		{
 			return await GetQueryResponseAsync(C_Svc_FindNearbyPopulatedPlace, request, CreateFindNearbyPopulatedPlaceQueryResponse, maxTries, 0);
 		}
@@ -189,5 +189,28 @@ namespace NGeo.GeoNames
 		}
 
 		#endregion
+	}
+
+	public static class RequestExecuteExtensions
+	{
+		public static Task<IGeoNameResponse> Execute(this ExtendedFindNearbyRequest request, int maxTries = 1)
+		{
+			return GeoNameService.ExtendedFindNearby(request, maxTries);
+		}
+
+		public static Task<IGeoNameResponse> Execute(this FindNearbyPopulatedPlaceRequest request, int maxTries = 1)
+		{
+			return GeoNameService.FindNearbyPopulatedPlace(request, maxTries);
+		}
+
+		public static Task<IGeoNameResponse> Execute(this FindNearbyToponymRequest request, int maxTries = 1)
+		{
+			return GeoNameService.FindNearbyToponym(request, maxTries);
+		}
+
+		public static Task<IGeoNameResponse> Execute(this HierarchyRequest request, int maxTries = 1)
+		{
+			return GeoNameService.GetHierarchy(request, maxTries);
+		}
 	}
 }
