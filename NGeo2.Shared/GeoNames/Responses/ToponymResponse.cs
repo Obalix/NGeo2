@@ -31,17 +31,14 @@ namespace NGeo.GeoNames.Responses
 #if (NET40)
 						await SyncToTaskFactory.CreateTask(
 							() => {
-								r.Items = (
-										el.Elements("geoname")
-											.ToObservable()
-											.Select((x, i) => Observable.FromAsync(async t => new { i = i, t = await GeoName.FromXml(x) }))
-											.Merge(NGeoSettings.MaxParallelThreads)
-											.ToEnumerable()
-											.ToArray()
-									)
+								r.Items = el.Elements("geoname")
+									.AsParallel()
+									.WithDegreeOfParallelism(NGeoSettings.MaxParallelThreads)
+									.Select((x, i) => new { i = i, t = GeoName.FromXml(x).Result })
 									.OrderBy(x => x.i)
 									.Select(x => x.t)
 									.ToArray();
+
 							}
 						);
 #else

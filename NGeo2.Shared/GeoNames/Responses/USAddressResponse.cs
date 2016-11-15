@@ -34,10 +34,7 @@ namespace NGeo.GeoNames.Responses
 						await SyncToTaskFactory.CreateTask(
 							() => {
 								r.Items = el.Elements("address")
-									.ToObservable()
-									.Select(x => Observable.FromAsync(async t => await Address.FromXml(x)))
-									.Merge(NGeoSettings.MaxParallelThreads)
-									.ToEnumerable()
+									.Select(x => Address.FromXml(x).Result)
 									.ToArray();
 							}
 						);

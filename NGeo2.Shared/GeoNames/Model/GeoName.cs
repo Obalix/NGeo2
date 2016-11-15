@@ -50,14 +50,8 @@ namespace NGeo.GeoNames.Model
 					r.FeatureClass = el.Element("fcl").SafeConvert(e => (FeatureClass)Enum.Parse(typeof(FeatureClass), (string)e, true), FeatureClass.Unknown);
 					r.Timezone = await Timezone.FromXml(el.Element("timezone"));
 #if (NET40)
-					r.AlternateNames = (
-							el.Elements("alternativeName")
-								.ToObservable()
-								.Select((an, i) => Observable.FromAsync(async t => new { i = i, an = await AlternateName.FromXml(an) }))
-								.Concat()
-								.ToEnumerable()
-								.ToArray()
-						)
+					r.AlternateNames = el.Elements("alternativeName")
+						.Select((an, i) => new { i = i, an = AlternateName.FromXml(an).Result })
 						.OrderBy(x => x.i)
 						.Select(x => x.an)
 						.ToArray();
