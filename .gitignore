@@ -64,6 +64,4 @@ UCosmic.Www.Mvc.Publish.xml
 #Ignore private folder
 /Private/
 
-#Ignore test app.config
-NGeo2.Tests.PCL45/app.config
-NGeo2.Tests.NET40/app.config
+**/app.config
