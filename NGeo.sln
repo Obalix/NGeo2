@@ -20,6 +20,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{54B672
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Releases", "Releases", "{007BF774-1259-4AB2-94F4-72098D4F1290}"
 	ProjectSection(SolutionItems) = preProject
+		nupkgs\NGeo.1.3.1.nupkg = nupkgs\NGeo.1.3.1.nupkg
+		nupkgs\NGeo.1.4.nupkg = nupkgs\NGeo.1.4.nupkg
+		nupkgs\NGeo.1.5.nupkg = nupkgs\NGeo.1.5.nupkg
+		nupkgs\NGeo.1.6.nupkg = nupkgs\NGeo.1.6.nupkg
+		nupkgs\NGeo.1.7.1.0.nupkg = nupkgs\NGeo.1.7.1.0.nupkg
+		nupkgs\NGeo.1.7.2.0.nupkg = nupkgs\NGeo.1.7.2.0.nupkg
+		nupkgs\NGeo.1.7.nupkg = nupkgs\NGeo.1.7.nupkg
+		nupkgs\NGeo.1.8.0.0.nupkg = nupkgs\NGeo.1.8.0.0.nupkg
+		nupkgs\NGeo.1.8.1.0.nupkg = nupkgs\NGeo.1.8.1.0.nupkg
+		nupkgs\NGeo.1.9.0.0.nupkg = nupkgs\NGeo.1.9.0.0.nupkg
 		nupkgs\NGeo2.2.0.0.nupkg = nupkgs\NGeo2.2.0.0.nupkg
 	EndProjectSection
 EndProject
