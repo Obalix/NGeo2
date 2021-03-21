@@ -24,7 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Model\NGeoItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\BasicNearbyToponymRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\ExtendedFindNearbyRequest.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\FindGeoNameRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\FindNearbyGeoNameRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\FindNearbyPlaceRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\FindNearbyToponymRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\GeoNameRequest.cs" />
