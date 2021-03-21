@@ -30,6 +30,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\GeoNameRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\HierarchyRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\RequestToQueyrStringConverterExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\SearchRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Responses\ErrorResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Responses\QueryResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Responses\ToponymResponse.cs" />

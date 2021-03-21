@@ -128,6 +128,7 @@
     <Compile Include="..\NGeo2.Tests.PCL45\QueryStringTests.cs">
       <Link>QueryStringTests.cs</Link>
     </Compile>
+    <Compile Include="GNS_FreeTextSearchTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
