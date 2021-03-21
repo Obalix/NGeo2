@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using System.Reflection;
 using System.Xml;
 using System.Xml.Linq;
+
 using NGeo.GeoNames.Exceptions;
-using NGeo.GeoNames.Model;
 using NGeo.GeoNames.Requests;
 using NGeo.GeoNames.Responses;
+using NGeo2.Shared.GeoNames.Requests;
 
 namespace NGeo.GeoNames
 {
@@ -28,6 +27,17 @@ namespace NGeo.GeoNames
 		private const string C_Svc_FindNearbyPopulatedPlace = "findNearbyPlaceName";
 		private const string C_Svc_FindNearbyToponym = "findNearby";
 		private const string C_Svc_Hierarchy = "hierarchy";
+		private const string C_Svc_Search = "search";
+
+
+		#region Search
+
+		public static async Task<IGeoNameResponse> Search(SearchRequest request, int maxTries = 1)
+		{
+			return await GetQueryResponseAsync(C_Svc_Search, request, CreateFreeSearchResponse, maxTries, 0);
+		}
+
+		#endregion
 
 		#region [ExtendedFindNearBy]
 
@@ -35,6 +45,11 @@ namespace NGeo.GeoNames
 		{
 			return await GetQueryResponseAsync(C_Svc_ExtendedFindNearby, request, CreateExendedFindNearbyQueryResponse, maxTries, 0);
 		}
+
+		private static async Task<IGeoNameResponse> CreateFreeSearchResponse(XDocument doc, string itemName)
+        {
+			return await GeoNameResponse.FromXml(doc.Root);
+        }
 
 		private static async Task<IGeoNameResponse> CreateExendedFindNearbyQueryResponse(XDocument doc, string itemName)
 		{
