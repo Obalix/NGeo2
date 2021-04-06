@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
 		<id>NGeo2</id>
-		<version>2.0.0</version>
+		<version>3.0.0</version>
 		<title>NGeo2</title>
 		<authors>Axel Eckenberger</authors>
 		<owners>Axel Eckenberger</owners>
-		<licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+		<license type="expression">MS-PL</license>
 		<projectUrl>https://github.com/Obalix/NGeo</projectUrl>
 		<!--<iconUrl>http://www.gravatar.com/avatar/2b36e5d2ac5fe3c2377466dd98c62d52.png</iconUrl>-->
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -15,40 +15,63 @@
 			GeoNames service from .NET code.
 		</description>
 		<releaseNotes>
-			NGeo is a client library that makes it easier to invoke the
-			GeoNames services from .NET code.
+      NGeo is a client library that makes it easier to invoke the
+      GeoNames services from .NET code.
 
-			It is based on the work of Dan Ludwig and John Meyer from The UCosmic Consortium.
+      It is based on the work of Dan Ludwig and John Meyer from The UCosmic Consortium.
 
-			2.0.0
-			- Complete rewrite of the data types and the service based on the HttpClient class.
-			- Libraries for: PCL (Profile7), Standard1.1 and NET 4.0
-			- Currently supported GeoNames endpoints:
-				* extendedFindNearby
-				* findNearbyPlaceName
-				* findNearby
-				* hierarchy
-		</releaseNotes>
+      3.0.0
+      - Incorporated free text search thanks to sigmarsson (https://github.com/sigmarsson)
+      - Dropped support for portable-net45+win8 and netstandard1.1
+      - Addes support for net47, net5.0, netcoreapp3.1, and net4.7
+			- restructured library code into one project with multiple targets
+      - restructured test code into one project, dropped net40 test
+      2.0.0
+      - Complete rewrite of the data types and the service based on the HttpClient class.
+      - Libraries for: PCL (Profile7), Standard1.1 and NET 4.0
+      - Currently supported GeoNames endpoints:
+      * extendedFindNearby
+      * findNearbyPlaceName
+      * findNearby
+      * hierarchy
+    </releaseNotes>
 		<copyright>Copyright © Axel Eckenberger 2016</copyright>
 		<tags>GeoNames</tags>
 		<dependencies>
-			<group>
-				<dependency id="Newtonsoft.Json" version="9.0.1" />
+			<group targetFramework="net5.0">
+        <dependency id="Newtonsoft.Json" version="13.0.1" />
+        <dependency id="System.Reactive" version="5.0.0" />
+        <dependency id="System.Reactive.Core" version="5.0.0" />
+        <dependency id="System.Reactive.Interfaces" version="5.0.0" />
+        <dependency id="System.Reactive.Linq" version="5.0.0" />
 			</group>
 
-			<group targetFramework="portable-net45+win8">
-				<dependency id="System.Reactive.Core" version="3.0.0" />
-				<dependency id="System.Reactive.Interfaces" version="3.0.0" />
-				<dependency id="System.Reactive.Linq" version="3.0.0" />
-			</group>
+      <group targetFramework="net4.7">
+        <dependency id="Newtonsoft.Json" version="13.0.1" />
+        <dependency id="System.Reactive" version="5.0.0" />
+        <dependency id="System.Reactive.Core" version="5.0.0" />
+        <dependency id="System.Reactive.Interfaces" version="5.0.0" />
+        <dependency id="System.Reactive.Linq" version="5.0.0" />
+      </group>
 
-			<group targetFramework="netstandard1.1">
-				<dependency id="System.Reactive.Core" version="3.1.0" />
-				<dependency id="System.Reactive.Interfaces" version="3.1.0" />
-				<dependency id="System.Reactive.Linq" version="3.1.0" />
-			</group>
+      <group targetFramework="netcoreapp3.1">
+        <dependency id="Newtonsoft.Json" version="13.0.1" />
+        <dependency id="System.Reactive" version="5.0.0" />
+        <dependency id="System.Reactive.Core" version="5.0.0" />
+        <dependency id="System.Reactive.Interfaces" version="5.0.0" />
+        <dependency id="System.Reactive.Linq" version="5.0.0" />
+      </group>
+
+      <group targetFramework="netstandard2.0">
+        <dependency id="Newtonsoft.Json" version="13.0.1" />
+        <dependency id="System.Reactive" version="5.0.0" />
+        <dependency id="System.Reactive.Core" version="5.0.0" />
+        <dependency id="System.Reactive.Interfaces" version="5.0.0" />
+        <dependency id="System.Reactive.Linq" version="5.0.0" />
+      </group>
 
 			<group targetFramework="net40">
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
 				<dependency id="Microsoft.Bcl" version="1.1.10" />
 				<dependency id="Microsoft.Bcl.Async" version="1.0.168" />
 				<dependency id="Microsoft.Bcl.Build" version="1.0.21" />
@@ -60,8 +83,10 @@
 		</dependencies>
 	</metadata>
 	<files>
-		<file src="NGeo2.PCL45\bin\Release\NGeo2.*" target="lib\portable-net45+win8" />
-		<file src="NGeo2.Standard1.1\bin\Release\NGeo2.*" target="lib\netstandard1.1" />
-		<file src="Ngeo2.NET40\bin\Release\Ngeo2.*" target="lib\net40" />
+		<file src="NGeo2.NET40\bin\Release\Ngeo2.*" target="lib\net40" />
+    <file src="NGeo2\bin\Release\net47\Ngeo2.*" target="lib\net47" />
+    <file src="NGeo2\bin\Release\netcoreapp3.1\Ngeo2.*" target="lib\netcoreapp3.1" />
+    <file src="NGeo2\bin\Release\net5.0\Ngeo2.*" target="lib\net5.0" />
+    <file src="NGeo2\bin\Release\netstandard2.0\Ngeo2.*" target="lib\netstandard2.0" />
 	</files>
 </package>
