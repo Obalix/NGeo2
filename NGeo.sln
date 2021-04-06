@@ -5,17 +5,12 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7180D76F-6485-4EB7-9F7B-9DBF7337BEE1}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		changelog.txt = changelog.txt
 		NGeo.sln.DotSettings = NGeo.sln.DotSettings
 		NGeo2.nuspec = NGeo2.nuspec
 		README.md = README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{54B67292-CF50-4FD0-9BE5-4F681857E59B}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Releases", "Releases", "{007BF774-1259-4AB2-94F4-72098D4F1290}"
@@ -33,25 +28,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Releases", "Releases", "{00
 		nupkgs\NGeo2.2.0.0.nupkg = nupkgs\NGeo2.2.0.0.nupkg
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo2.PCL45", "NGeo2.PCL45\NGeo2.PCL45.csproj", "{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C9A8DDE5-6E65-458D-B88A-6BC52557EF45}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo2.Tests.PCL45", "NGeo2.Tests.PCL45\NGeo2.Tests.PCL45.csproj", "{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo2.Standard1.1", "NGeo2.Standard1.1\NGeo2.Standard1.1.csproj", "{07A03077-D3B8-4CFF-9035-4F365941E785}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "NGeo2.Shared", "NGeo2.Shared\NGeo2.Shared.shproj", "{6A311434-B321-4453-8E20-9CDDACF563BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo2.NET40", "NGeo2.NET40\NGeo2.NET40.csproj", "{F8A91977-38C1-4E65-AC4B-00C413CFE841}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGeo2.Tests.NET40", "NGeo2.Tests.NET40\NGeo2.Tests.NET40.csproj", "{6EE7AF2A-0FB4-4C25-BFF7-035BAAF874CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NGeo2", "NGeo2\NGeo2.csproj", "{9F1916F5-48AD-4FDF-82F2-83635C7FCF17}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NGeo2.Tests", "NGeo2.Tests\NGeo2.Tests.csproj", "{DD183A57-FBF2-4DDD-8093-2A8F4D432602}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		NGeo2.Shared\NGeo2.Shared.projitems*{07a03077-d3b8-4cff-9035-4f365941e785}*SharedItemsImports = 4
 		NGeo2.Shared\NGeo2.Shared.projitems*{6a311434-b321-4453-8e20-9cddacf563bb}*SharedItemsImports = 13
-		NGeo2.Shared\NGeo2.Shared.projitems*{e9d5a5f8-e040-45f3-87b7-4dcbc5bad293}*SharedItemsImports = 4
+		NGeo2.Shared\NGeo2.Shared.projitems*{9f1916f5-48ad-4fdf-82f2-83635c7fcf17}*SharedItemsImports = 5
 		NGeo2.Shared\NGeo2.Shared.projitems*{f8a91977-38c1-4e65-ac4b-00c413cfe841}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,34 +49,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9D5A5F8-E040-45F3-87B7-4DCBC5BAD293}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07A03077-D3B8-4CFF-9035-4F365941E785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07A03077-D3B8-4CFF-9035-4F365941E785}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07A03077-D3B8-4CFF-9035-4F365941E785}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07A03077-D3B8-4CFF-9035-4F365941E785}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F8A91977-38C1-4E65-AC4B-00C413CFE841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8A91977-38C1-4E65-AC4B-00C413CFE841}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8A91977-38C1-4E65-AC4B-00C413CFE841}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8A91977-38C1-4E65-AC4B-00C413CFE841}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6EE7AF2A-0FB4-4C25-BFF7-035BAAF874CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6EE7AF2A-0FB4-4C25-BFF7-035BAAF874CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6EE7AF2A-0FB4-4C25-BFF7-035BAAF874CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6EE7AF2A-0FB4-4C25-BFF7-035BAAF874CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F1916F5-48AD-4FDF-82F2-83635C7FCF17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F1916F5-48AD-4FDF-82F2-83635C7FCF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F1916F5-48AD-4FDF-82F2-83635C7FCF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F1916F5-48AD-4FDF-82F2-83635C7FCF17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD183A57-FBF2-4DDD-8093-2A8F4D432602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD183A57-FBF2-4DDD-8093-2A8F4D432602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD183A57-FBF2-4DDD-8093-2A8F4D432602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD183A57-FBF2-4DDD-8093-2A8F4D432602}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{007BF774-1259-4AB2-94F4-72098D4F1290} = {7180D76F-6485-4EB7-9F7B-9DBF7337BEE1}
-		{C35D0749-F687-43DC-94E8-3D2EDF9B7FF1} = {C9A8DDE5-6E65-458D-B88A-6BC52557EF45}
-		{6EE7AF2A-0FB4-4C25-BFF7-035BAAF874CE} = {C9A8DDE5-6E65-458D-B88A-6BC52557EF45}
+		{DD183A57-FBF2-4DDD-8093-2A8F4D432602} = {C9A8DDE5-6E65-458D-B88A-6BC52557EF45}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CC64C2A6-1D36-4212-8DA8-4561E4DC8EAB}

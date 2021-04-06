@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TargetFrameworks>net47;net5.0;netcoreapp3.1;netstandard2.0</TargetFrameworks>
+    <RootNamespace>NGeo</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" Condition="'$(TargetFramework)' != 'net40'" />
+    <PackageReference Include="System.Reactive" Version="5.0.0" Condition="'$(TargetFramework)' != 'net40'" />
+    <PackageReference Include="System.Reactive.Core" Version="5.0.0" Condition="'$(TargetFramework)' != 'net40'" />
+    <PackageReference Include="System.Reactive.Interfaces" Version="5.0.0" Condition="'$(TargetFramework)' != 'net40'" />
+    <PackageReference Include="System.Reactive.Linq" Version="5.0.0" Condition="'$(TargetFramework)' != 'net40'" />
+  </ItemGroup>
+
+  <Import Project="..\NGeo2.Shared\NGeo2.Shared.projitems" Label="Shared" />
+</Project>

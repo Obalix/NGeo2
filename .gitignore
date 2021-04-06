@@ -64,7 +64,5 @@ UCosmic.Www.Mvc.Publish.xml
 #Ignore private folder
 /Private/
 
-**/app.config
-
 .vs
 .vscode

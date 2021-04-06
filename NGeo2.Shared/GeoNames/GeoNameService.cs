@@ -12,7 +12,7 @@ using NGeo.GeoNames.Responses;
 
 namespace NGeo.GeoNames
 {
-	public class GeoNameService
+	public static class GeoNameService
 	{
 		private static readonly Dictionary<string, Type> S_itemMap = new Dictionary<string, Type>() {
 			{ "status", typeof(ErrorResponse) },
@@ -137,7 +137,7 @@ namespace NGeo.GeoNames
 			string method,
 			GeoNameRequest request,
 			Func<XDocument, string, Task<IGeoNameResponse>> createQueryResponse,
-			int maxTries, 
+			int maxTries,
 			int nTry
 		)
 		{
@@ -155,13 +155,15 @@ namespace NGeo.GeoNames
 					{
 						var xml = await response.Content.ReadAsStringAsync();
 						var doc = XDocument.Parse(xml);
-						try {
+						try
+						{
 							var itemName = doc.Root.Elements().Select(x => x.Name.LocalName).FirstOrDefault();
 							if (itemName == "status")
 							{
 								return (await ErrorResponse.FromXml(doc.Root)) ?? new ErrorResponse(new GeoNamesException("Unexpected response type."));
 							}
-							else { 
+							else
+							{
 								return await createQueryResponse(doc, itemName);
 							}
 						}

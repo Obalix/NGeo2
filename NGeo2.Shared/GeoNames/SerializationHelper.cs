@@ -15,9 +15,11 @@ namespace NGeo.GeoNames
 			}
 			else
 			{
-#pragma warning disable CS0618 // Type or member is obsolete
-				return await JsonConvert.DeserializeObjectAsync<TResult>(json);
-#pragma warning restore CS0618 // Type or member is obsolete
+#if (NET40)
+				return await Task.Factory.StartNew<TResult>(() => JsonConvert.DeserializeObject<TResult>(json));
+#else
+				return await Task.FromResult(JsonConvert.DeserializeObject<TResult>(json));
+#endif
 			}
 		}
 
