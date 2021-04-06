@@ -2,7 +2,7 @@
 using NGeo.GeoNames.Model;
 
 namespace NGeo.GeoNames.Requests
-{   
+{
 	/// <summary>
 	/// Webservice Type : REST
 	/// Url : api.geonames.org/findNearby?

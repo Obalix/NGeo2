@@ -6,6 +6,7 @@ namespace NGeo.GeoNames.Requests
 	public abstract class GeoNameRequest
 	{
 		private string _userName;
+
 		[JsonProperty("username", Order = 1)]
 		public string UserName {
 			get { return _userName ?? NGeoSettings.UserName; }
