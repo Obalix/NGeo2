@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NGeo.GeoNames;
 using NGeo.GeoNames.Model;
@@ -102,7 +101,7 @@ namespace NGeo
 			toponymResponse.ShouldNotBeNull();
 			toponymResponse.Items.Length.ShouldEqual(1);
 
-			toponymResponse.Items[0].TopynymId.ShouldEqual(5789123);
+			toponymResponse.Items[0].AdminCode3.ShouldEqual("7174408");
 		}
 
 #if (NET40)
