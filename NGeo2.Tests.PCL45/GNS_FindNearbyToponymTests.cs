@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NGeo.GeoNames;
 using NGeo.GeoNames.Model;
@@ -71,7 +70,7 @@ namespace NGeo
 			toponymResponse.ShouldNotBeNull();
 			toponymResponse.Items.Length.ShouldEqual(1);
 
-			toponymResponse.Items[0].TopynymId.ShouldEqual(10628563);
+			toponymResponse.Items[0].AdminCode3.ShouldEqual("3342");
 		}
 
 #if (NET40)
@@ -133,7 +132,7 @@ namespace NGeo
 			toponymResponse.ShouldNotBeNull();
 			toponymResponse.Items.Length.ShouldEqual(1);
 
-			toponymResponse.Items[0].TopynymId.ShouldEqual(10628563);
+			toponymResponse.Items[0].AdminCode3.ShouldEqual("3342");
 		}
 	}
 }

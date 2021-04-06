@@ -24,12 +24,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Model\NGeoItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\BasicNearbyToponymRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\ExtendedFindNearbyRequest.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\FindGeoNameRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\FindNearbyGeoNameRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\FindNearbyPlaceRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\FindNearbyToponymRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\GeoNameRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\HierarchyRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\RequestToQueyrStringConverterExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Requests\SearchRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Responses\ErrorResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Responses\QueryResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GeoNames\Responses\ToponymResponse.cs" />
