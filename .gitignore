@@ -65,3 +65,6 @@ UCosmic.Www.Mvc.Publish.xml
 /Private/
 
 **/app.config
+
+.vs
+.vscode
