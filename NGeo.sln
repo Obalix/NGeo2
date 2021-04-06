@@ -13,21 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Releases", "Releases", "{007BF774-1259-4AB2-94F4-72098D4F1290}"
-	ProjectSection(SolutionItems) = preProject
-		nupkgs\NGeo.1.3.1.nupkg = nupkgs\NGeo.1.3.1.nupkg
-		nupkgs\NGeo.1.4.nupkg = nupkgs\NGeo.1.4.nupkg
-		nupkgs\NGeo.1.5.nupkg = nupkgs\NGeo.1.5.nupkg
-		nupkgs\NGeo.1.6.nupkg = nupkgs\NGeo.1.6.nupkg
-		nupkgs\NGeo.1.7.1.0.nupkg = nupkgs\NGeo.1.7.1.0.nupkg
-		nupkgs\NGeo.1.7.2.0.nupkg = nupkgs\NGeo.1.7.2.0.nupkg
-		nupkgs\NGeo.1.7.nupkg = nupkgs\NGeo.1.7.nupkg
-		nupkgs\NGeo.1.8.0.0.nupkg = nupkgs\NGeo.1.8.0.0.nupkg
-		nupkgs\NGeo.1.8.1.0.nupkg = nupkgs\NGeo.1.8.1.0.nupkg
-		nupkgs\NGeo.1.9.0.0.nupkg = nupkgs\NGeo.1.9.0.0.nupkg
-		nupkgs\NGeo2.2.0.0.nupkg = nupkgs\NGeo2.2.0.0.nupkg
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C9A8DDE5-6E65-458D-B88A-6BC52557EF45}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "NGeo2.Shared", "NGeo2.Shared\NGeo2.Shared.shproj", "{6A311434-B321-4453-8E20-9CDDACF563BB}"
@@ -66,7 +51,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{007BF774-1259-4AB2-94F4-72098D4F1290} = {7180D76F-6485-4EB7-9F7B-9DBF7337BEE1}
 		{DD183A57-FBF2-4DDD-8093-2A8F4D432602} = {C9A8DDE5-6E65-458D-B88A-6BC52557EF45}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
