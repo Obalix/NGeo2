@@ -1,13 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NGeo.GeoNames;
 using NGeo.GeoNames.Model;
-using NGeo2.Shared.GeoNames.Requests;
-using System;
-using System.Threading.Tasks;
+using NGeo.GeoNames.Requests;
 
 namespace NGeo
 {
-    [TestClass]
+	[TestClass]
     public class GNS_FreeTextSearchTest
     {
 
@@ -18,7 +16,6 @@ namespace NGeo
         {
           var request = new SearchRequest
             {
-                UserName = "demo",
                 Pattern = "Furnace",
                 Style = Style.FULL
             };

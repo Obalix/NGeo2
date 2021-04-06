@@ -113,6 +113,9 @@
     <Compile Include="..\NGeo2.Tests.PCL45\GNS_FindNearbyToponymTests.cs">
       <Link>GNS_FindNearbyToponymTests.cs</Link>
     </Compile>
+    <Compile Include="..\NGeo2.Tests.PCL45\GNS_FreeTextSearchTest.cs">
+      <Link>GNS_FreeTextSearchTest.cs</Link>
+    </Compile>
     <Compile Include="..\NGeo2.Tests.PCL45\GNS_GetHierarchyTests.cs">
       <Link>GNS_GetHierarchyTests.cs</Link>
     </Compile>
@@ -128,7 +131,6 @@
     <Compile Include="..\NGeo2.Tests.PCL45\QueryStringTests.cs">
       <Link>QueryStringTests.cs</Link>
     </Compile>
-    <Compile Include="GNS_FreeTextSearchTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

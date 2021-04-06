@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
-using NGeo.GeoNames.Requests;
 
-namespace NGeo2.Shared.GeoNames.Requests
+namespace NGeo.GeoNames.Requests
 {
     public class SearchRequest : GeoNameRequest
     {

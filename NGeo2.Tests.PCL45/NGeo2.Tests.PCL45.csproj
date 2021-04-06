@@ -73,6 +73,7 @@
     <Compile Include="GNS_ExtendedFindNearbyTests.cs" />
     <Compile Include="GNS_FindNearbyPopulatedPlaceTests.cs" />
     <Compile Include="GNS_FindNearbyToponymTests.cs" />
+    <Compile Include="GNS_FreeTextSearchTest.cs" />
     <Compile Include="GNS_GetHierarchyTests.cs" />
     <Compile Include="LiveTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

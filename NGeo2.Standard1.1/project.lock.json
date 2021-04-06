@@ -3215,26 +3215,26 @@
     ".NETStandard,Version=v1.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Tommy\\.nuget\\packages\\": {},
+    "C:\\Users\\axel\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tommy\\source\\repos\\NGeo2\\NGeo2.Standard1.1\\NGeo2.Standard1.1.csproj",
+      "projectUniqueName": "D:\\Projects_git\\NGeo\\NGeo2.Standard1.1\\NGeo2.Standard1.1.csproj",
       "projectName": "NGeo2.Standard1.1",
-      "projectPath": "C:\\Users\\Tommy\\source\\repos\\NGeo2\\NGeo2.Standard1.1\\NGeo2.Standard1.1.csproj",
-      "projectJsonPath": "C:\\Users\\Tommy\\source\\repos\\NGeo2\\NGeo2.Standard1.1\\project.json",
-      "packagesPath": "C:\\Users\\Tommy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tommy\\source\\repos\\NGeo2\\NGeo2.Standard1.1\\obj\\",
+      "projectPath": "D:\\Projects_git\\NGeo\\NGeo2.Standard1.1\\NGeo2.Standard1.1.csproj",
+      "projectJsonPath": "D:\\Projects_git\\NGeo\\NGeo2.Standard1.1\\project.json",
+      "packagesPath": "C:\\Users\\axel\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects_git\\NGeo\\NGeo2.Standard1.1\\obj\\",
       "projectStyle": "ProjectJson",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Tommy\\source\\repos\\NGeo2\\.nuget\\NuGet.Config",
-        "C:\\Users\\Tommy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "D:\\Projects_git\\NGeo\\.nuget\\NuGet.Config",
+        "C:\\Users\\axel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"

@@ -9,7 +9,6 @@ using System.Xml.Linq;
 using NGeo.GeoNames.Exceptions;
 using NGeo.GeoNames.Requests;
 using NGeo.GeoNames.Responses;
-using NGeo2.Shared.GeoNames.Requests;
 
 namespace NGeo.GeoNames
 {
@@ -37,6 +36,11 @@ namespace NGeo.GeoNames
 			return await GetQueryResponseAsync(C_Svc_Search, request, CreateFreeSearchResponse, maxTries, 0);
 		}
 
+		private static async Task<IGeoNameResponse> CreateFreeSearchResponse(XDocument doc, string itemName)
+		{
+			return await GeoNameResponse.FromXml(doc.Root);
+		}
+
 		#endregion
 
 		#region [ExtendedFindNearBy]
@@ -45,11 +49,6 @@ namespace NGeo.GeoNames
 		{
 			return await GetQueryResponseAsync(C_Svc_ExtendedFindNearby, request, CreateExendedFindNearbyQueryResponse, maxTries, 0);
 		}
-
-		private static async Task<IGeoNameResponse> CreateFreeSearchResponse(XDocument doc, string itemName)
-        {
-			return await GeoNameResponse.FromXml(doc.Root);
-        }
 
 		private static async Task<IGeoNameResponse> CreateExendedFindNearbyQueryResponse(XDocument doc, string itemName)
 		{
